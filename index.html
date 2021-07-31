@@ -6,14 +6,17 @@
 		<meta name="description" content="{{ &OPT.siteDescription }}" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <meta name="renderer" content="webkit"/>
+        <meta name="force-rendering" content="webkit"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 		<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.1/styles/xcode.min.css">
 		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://cdn.staticfile.org/jquery/1.11.0/jquery.min.js" type="a73da9fd004c0b2dc959c576-text/javascript"></script>
 		
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gdtool/cloudflare-workers-blog@master/themes/yinwang/files/bootstrap-tooltips.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gdtool/cloudflare-workers-blog@master/themes/yinwang/files/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gdtool/cloudflare-workers-blog@master/themes/yinwang/files/home.css">
-		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/awa-qwq/CF-BLOG-MDUI@master/file/bootstrap-tooltips.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/awa-qwq/CF-BLOG-MDUI@master/file/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/awa-qwq/CF-BLOG-MDUI@master/file/home.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"  integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"  crossorigin="anonymous">
 		{{ &OPT.codeBeforHead }}
 	</head>
 	<body>
@@ -40,11 +43,21 @@
 		</nav>
 		<div>
 			<div class="outer">
+                <div class="mdui-panel mdui-panel-popout" mdui-panel>
+                    <div class="mdui-panel-item">
+                      <div class="mdui-panel-item-header">公告</div>
+                      <div class="mdui-panel-item-body">
+                        <p>阿巴阿巴</p>
+                      </div>
+                    </div>
+                </div>
 				<ul class="list-group">
 					{{ #articleList }}
 					<li class="list-group-item title">
+                        {{ &title }}
 						<div class="date">{{ &createDate10 }}</div>
-						<a href="/article/{{&id}}/{{&link}}.html" target="_self">{{ &title }}</a>
+						
+                        <a class="mdui-btn mdui-btn-block mdui-btn-raised mdui-ripple" href="/article/{{&id}}/{{&link}}.html" target="_self">查看</a>
 					</li>
 					{{ /articleList }}
 				</ul>
@@ -59,7 +72,7 @@
 		{{ &OPT.codeBeforBody }}
 	</body>
 	<script src="https://cdn.staticfile.org/highlight.js/10.0.1/highlight.min.js" type="a73da9fd004c0b2dc959c576-text/javascript"></script>
-	<script src="https://cdn.jsdelivr.net/gh/gdtool/cloudflare-workers-blog@master/themes/yinwang/files/main.js" type="a73da9fd004c0b2dc959c576-text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/gh/awa-qwq/CF-BLOG-MDUI@master/file/main.js" type="a73da9fd004c0b2dc959c576-text/javascript"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="a73da9fd004c0b2dc959c576-text/javascript"></script>
 	<script type="a73da9fd004c0b2dc959c576-text/javascript">window.dataLayer = window.dataLayer || [];
 		function gtag() {
@@ -67,5 +80,9 @@
 		}
 		gtag('js', new Date());
 		gtag('config', 'UA-160006603-1');</script>
-
+    <script
+        src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+        integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+        crossorigin="anonymous"
+      ></script>
 </html>
