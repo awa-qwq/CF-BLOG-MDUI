@@ -89,9 +89,10 @@
 					<label class="mdui-textfield-label">更新频率</label> 
 					<select class="mdui-select" id="changefreq" name="changefreq" mdui-select="{position: 'auto'}"> <option value="always" selected="selected">经常更新</option> <option value="hourly">每小时更新</option> <option value="daily">每天更新</option> <option value="weekly">每周更新</option> <option value="monthly">每月更新</option> <option value="yearly">每年更新</option> <option value="never">从不更新</option> </select> 
 							 </div>
+							 <div id="content"><textarea style="display:none;"></textarea></div>
+
 					<button tabindex="0"    type="submit" id="btn_saveEdit" class="mdui-btn mdui-btn-block mdui-btn-raised mdui-ripple" onclick="saveEdit()">保存</>
 					<button  type="submit"  id="btn_delete" class="mdui-btn mdui-btn-block mdui-btn-raised mdui-ripple mdui-color-red" onclick="deleteArticle()" >删除</>
-				<div id="content"><textarea style="display:none;"></textarea></div>
 			</form>
 		</div>
 
