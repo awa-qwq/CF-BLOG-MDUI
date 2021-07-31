@@ -2,7 +2,7 @@
 <html>
  <head> 
   <meta charset="utf-8" /> 
-  <title>{{ &title }}-管理面板</title> 
+  <title>管理面板</title> 
   <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico" /> 
   <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico" /> 
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> 
@@ -45,18 +45,19 @@
      <button id="loadmore" class="mdui-btn mdui-btn-raised mdui-ripple">加载更多...</button> 
     </div> 
    </div> 
+
    <div class="tab-pane fade in active" id="new"> 
     <div class="container"> 
      <h3 id="labelNew">新建文章</h3> 
      <form id="addNewForm" class="form-inline"> 
       <div class="form-group" style="width: 98%"> 
-       <div class="mdui-textfield mdui-textfield-floating-label"> 
+       <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">标题*</label> 
         <input class="mdui-textfield-input" type="text" name="title" id="title" /> 
        </div> 
       </div> 
       <div class="form-group"> 
-       <div class="mdui-textfield mdui-textfield-floating-label"> 
+       <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">头图（暂未支持）</label> 
         <input class="mdui-textfield-input" type="url" name="img" id="img" disabled="" /> 
         <div class="mdui-textfield-helper">
@@ -65,7 +66,7 @@
        </div> 
       </div> 
       <div class="form-group"> 
-       <div class="mdui-textfield mdui-textfield-floating-label"> 
+       <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">永久链接</label> 
         <input class="mdui-textfield-input" type="link" name="link" id="title" /> 
         <div class="mdui-textfield-helper">
@@ -86,25 +87,25 @@
        </div> 
       </div> 
       <div class="form-group"> 
-       <div class="mdui-textfield mdui-textfield-floating-label"> 
+       <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">标签</label> 
         <input class="mdui-textfield-input" type="text" name="tags" id="tags" /> 
        </div> 
       </div> 
       <div class="form-group"> 
-       <div class="mdui-textfield mdui-textfield-floating-label"> 
+       <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">权重</label> 
-        <input class="mdui-textfield-input" type="text" name="priority" id="priority" placeholder=""/> 
+        <input class="mdui-textfield-input" type="text" name="priority" id="priority" placeholder="0.5"/> 
        </div> 
       </div> 
       <div class="form-group"> 
-       <label for="exampleInputEmail2">更新频率</label> 
-       <select class="mdui-select" id="changefreq" name="changefreq" mdui-select="{position: 'top'}"> <option value="always" selected="selected">经常更新</option> <option value="hourly">每小时更新</option> <option value="daily">每天更新</option> <option value="weekly">每周更新</option> <option value="monthly">每月更新</option> <option value="yearly">每年更新</option> <option value="never">从不更新</option> </select> 
+       <label class="mdui-textfield-label">更新频率</label> 
+       <select class="mdui-select" id="changefreq" name="changefreq" mdui-select="{position: 'auto'}"> <option value="always" selected="selected">经常更新</option> <option value="hourly">每小时更新</option> <option value="daily">每天更新</option> <option value="weekly">每周更新</option> <option value="monthly">每月更新</option> <option value="yearly">每年更新</option> <option value="never">从不更新</option> </select> 
       </div> 
-      <button tabindex="0" type="submit" id="btn_saveAddNew" class="mdui-btn mdui-btn-block mdui-btn-raised mdui-ripple" onclick="saveAddNew()">保存</button> 
       <div id="content">
-		<textarea style="display:none;"></textarea>
-	   </div> 
+        <textarea style="display:none;"></textarea>
+         </div> 
+          <button tabindex="0" type="submit" id="btn_saveAddNew" class="mdui-btn mdui-btn-block mdui-btn-raised mdui-ripple" onclick="saveAddNew()">保存</button> 
 	     </form> 
     </div> 
    </div> 
@@ -125,7 +126,7 @@
          <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i> 
         </div> 
         <div class="mdui-panel-item-body"> 
-         <div class="mdui-textfield mdui-textfield-floating-label"> 
+         <div class="mdui-textfield "> 
           <textarea class="mdui-textfield-input" id="WidgetCategory" name="WidgetCategory" rows="4" placeholder="[&quot;分类A&quot;,&quot;分类B&quot;,&quot;分类C&quot;,&quot;分类D&quot;]"></textarea> 
          </div> 
          <div class="mdui-panel-item-actions"> 

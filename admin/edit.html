@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>编辑文章 - CF-blog后台</title>
+    <title>编辑文章</title>
     <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico" />
 	<link rel="shortcut icon" type="image/x-icon"  href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico"/>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap-select/1.9.4/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"  integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"  crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" /> 
 
     
     <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
@@ -25,19 +26,10 @@
 	
 </head>
 <body>
-
-<nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
-
-	<div>
-		<ul id="myTab" class="nav nav-tabs">
-			<li class="active">
-				<a href="/admin/" >返回文章</a>
-			</li>
-		</ul>
-	</div>
-	</div>
-</nav>
+	<div class="mdui-tab" mdui-tab=""> 
+		<a href="/admin/" class="mdui-ripple">返回文章</a> 
+	   </div> 
+	 
 <div id="myTabContent" class="tab-content" style="padding-top: 60px;">
 
 		<div class="container">
@@ -46,48 +38,59 @@
 			<form id="editForm" class="form-inline"  action="/" >
 
 				<div class="form-group" style="width: 98%">
-					<input type="hidden" class="form-control" name="id" id="id" readonly required="true">
-					<input type="text" class="form-control" name="title" id="title" placeholder="标题" style="width: 800px;" required="true">
+					<div class="mdui-textfield "> 
+						<label class="mdui-textfield-label">标题*</label> 
+						<input class="mdui-textfield-input" type="text" name="title" id="title" /> 
+					   </div> 
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">特色图片</label>
-					<input type="url" class="form-control" style="width: 400px;"  name="img" id="img" placeholder="" >
+					<div class="mdui-textfield "> 
+						<label class="mdui-textfield-label">头图（暂未支持）</label> 
+						<input class="mdui-textfield-input" type="url" name="img" id="img" disabled="" /> 
+						<div class="mdui-textfield-helper">
+						 首页文章标题旁的图片
+								</div>
+								</div>
+				<div class="form-group">
+					<div class="mdui-textfield "> 
+						<label class="mdui-textfield-label">永久链接</label> 
+						<input class="mdui-textfield-input" type="link" name="link" id="title" /> 
+						<div class="mdui-textfield-helper">
+						 默认自动生成
+						</div> 
+					   </div> 
+								</div>
+				<div class="form-group">
+					<div class="mdui-textfield mdui-textfield"> 
+						<label class="mdui-textfield-label">创建日期</label> 
+						<input type="datetime-local" class="form-control" id="createDate" name="createDate" placeholder="" required="true" /> 
+					   </div> 
+								</div>
+				<div class="form-group">
+					<div class="mdui-textfield mdui-textfield"> 
+						<label class="mdui-textfield-label">分类</label> 
+						<select class="mdui-select" name="category[]" id="category" mdui-select="{position: 'auto'}"> </select> 
+					   </div> 
+									</select>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">永久链接</label>
-					<input type="text" class="form-control" name="link" id="link" placeholder="" style="vertical-align:left !important;" required="true">
-				</div>
+					<div class="mdui-textfield "> 
+						<label class="mdui-textfield-label">标签</label> 
+						<input class="mdui-textfield-input" type="text" name="tags" id="tags" /> 
+					   </div> 
+								</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">创建日期</label>
-					<input type="datetime-local" class="form-control" id="createDate" name="createDate" placeholder="" style="vertical-align:left !important;" required="true">
-				</div>
+					<div class="mdui-textfield "> 
+						<label class="mdui-textfield-label">权重</label> 
+						<input class="mdui-textfield-input" type="text" name="priority" id="priority" placeholder="0.5"/> 
+					   </div> 
+								</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">分类</label>
-					<select class="selectpicker" multiple name="category[]" id="category">
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="exampleInputEmail2">标签</label>
-					<input type="text" class="form-control" name="tags" id="tags" placeholder="标签1,标签2">
-				</div>
-				<div class="form-group">
-					<label for="exampleInputEmail2">权重</label>
-					<input type="text" class="form-control" name="priority" id="priority" value='0.5' placeholder="权重">
-				</div>
-				<div class="form-group">
-					<label for="exampleInputEmail2">更新频率</label>
-					    <select class="form-control" id="changefreq" name="changefreq">
-						<option value="daily" >daily</option>
-						<option value="hourly" >hourly</option>
-						<option value="weekly" >weekly</option>
-						<option value="monthly" >monthly</option>
-						<option value="yearly" >yearly</option>
-						<option value="never" >never</option>
-						<option value="always" >always</option>
-					    </select>
-				</div>
-					<a tabindex="0"  role="button"  type="submit" id="btn_saveEdit" class="btn btn-default" onclick="saveEdit()">保存</a>
-					<a  type="submit" role="button" id="btn_delete" class="btn btn-warning" onclick="deleteArticle()">删除</a>
+					<label class="mdui-textfield-label">更新频率</label> 
+					<select class="mdui-select" id="changefreq" name="changefreq" mdui-select="{position: 'auto'}"> <option value="always" selected="selected">经常更新</option> <option value="hourly">每小时更新</option> <option value="daily">每天更新</option> <option value="weekly">每周更新</option> <option value="monthly">每月更新</option> <option value="yearly">每年更新</option> <option value="never">从不更新</option> </select> 
+							 </div>
+					<button tabindex="0"    type="submit" id="btn_saveEdit" class="mdui-btn mdui-btn-block mdui-btn-raised mdui-ripple" onclick="saveEdit()">保存</>
+					<button  type="submit"  id="btn_delete" class="mdui-btn mdui-btn-block mdui-btn-raised mdui-ripple mdui-color-red" onclick="deleteArticle()" >删除</>
 				<div id="content"><textarea style="display:none;"></textarea></div>
 			</form>
 		</div>
@@ -168,6 +171,7 @@ src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
 integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
 crossorigin="anonymous"
 ></script>
+<script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>  
 
 </body>
 
