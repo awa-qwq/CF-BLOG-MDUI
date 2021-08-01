@@ -23,11 +23,12 @@
  </head> 
  <body> 
   <div class="mdui-tab" mdui-tab=""> 
-   <a href="/" class="mdui-ripple">首页</a> 
-   <a href="#list" class="mdui-ripple" data-toggle="tab">我的文章</a> 
-   <a href="#new" class="mdui-ripple" data-toggle="tab">新建文章</a> 
-   <a href="#config" class="mdui-ripple" data-toggle="tab">设置</a> 
-   <a href="#pub" class="mdui-ripple" data-toggle="tab">发布&amp;更新</a> 
+   <a href="/" class="mdui-btn mdui-ripple">首页</a> 
+   <a href="#list" class="mdui-btn mdui-ripple" data-toggle="tab">我的文章</a> 
+   <a href="#new" class="mdui-btn mdui-ripple" data-toggle="tab">新建文章</a> 
+   <a href="#config" class="mdui-btn mdui-ripple" data-toggle="tab">设置</a> 
+   <!--a href="#pub" class="mdui-btn mdui-ripple" data-toggle="tab">发布&amp;更新</a--> 
+   <a class="mdui-btn mdui-ripple" onclick="publish()">发布&amp;更新</a>
   </div> 
   <div class="tab-content" id="myTabContent" style="padding-top: 60px;"> 
    <div class="tab-pane fade" id="list"> 
@@ -47,15 +48,19 @@
    </div> 
 
    <div class="tab-pane fade in active" id="new"> 
+
     <div class="container"> 
      <h3 id="labelNew">新建文章</h3> 
+
      <form id="addNewForm" class="form-inline"> 
+
       <div class="form-group" style="width: 98%"> 
        <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">标题*</label> 
         <input class="mdui-textfield-input" type="text" name="title" id="title" /> 
        </div> 
       </div> 
+
       <div class="form-group"> 
        <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">头图（暂未支持）</label> 
@@ -65,6 +70,7 @@
         </div> 
        </div> 
       </div> 
+
       <div class="form-group"> 
        <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">永久链接</label> 
@@ -74,34 +80,40 @@
         </div> 
        </div> 
       </div> 
+
       <div class="form-group"> 
        <div class="mdui-textfield mdui-textfield"> 
         <label class="mdui-textfield-label">创建日期</label> 
         <input type="datetime-local" class="form-control" id="createDate" name="createDate" placeholder="" required="true" /> 
        </div> 
       </div> 
+
       <div class="form-group"> 
        <div class="mdui-textfield mdui-textfield"> 
         <label class="mdui-textfield-label">分类</label> 
         <select class="mdui-select" name="category[]" id="category" mdui-select="{position: 'auto'}"> </select> 
        </div> 
       </div> 
+
       <div class="form-group"> 
        <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">标签</label> 
         <input class="mdui-textfield-input" type="text" name="tags" id="tags" /> 
        </div> 
       </div> 
+
       <div class="form-group"> 
        <div class="mdui-textfield "> 
         <label class="mdui-textfield-label">权重</label> 
         <input class="mdui-textfield-input" type="text" name="priority" id="priority" placeholder="0.5"/> 
        </div> 
       </div> 
+
       <div class="form-group"> 
        <label class="mdui-textfield-label">更新频率</label> 
        <select class="mdui-select" id="changefreq" name="changefreq" mdui-select="{position: 'auto'}"> <option value="always" selected="selected">经常更新</option> <option value="hourly">每小时更新</option> <option value="daily">每天更新</option> <option value="weekly">每周更新</option> <option value="monthly">每月更新</option> <option value="yearly">每年更新</option> <option value="never">从不更新</option> </select> 
       </div> 
+
       <div id="content">
         <textarea style="display:none;"></textarea>
          </div> 
