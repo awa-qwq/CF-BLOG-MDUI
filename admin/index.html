@@ -27,7 +27,7 @@
    <a href="#list" class="mdui-btn mdui-ripple" data-toggle="tab">我的文章</a> 
    <a href="#new" class="mdui-btn mdui-ripple" data-toggle="tab">新建文章</a> 
    <a href="#config" class="mdui-btn mdui-ripple" data-toggle="tab">设置</a> 
-   <!--a href="#pub" class="mdui-btn mdui-ripple" data-toggle="tab">发布&amp;更新</a--> 
+   <a href="#about" class="mdui-btn mdui-ripple" data-toggle="tab">关于</a> 
    <a class="mdui-btn mdui-ripple" onclick="publish()">发布&amp;更新</a>
   </div> 
   <div class="tab-content" id="myTabContent" style="padding-top: 60px;"> 
@@ -217,31 +217,43 @@
      </form> 
     </div> 
    </div> 
-   <div class="tab-pane fade" id="pub"> 
+   <div class="tab-pane fade" id="about"> 
     <div class="container"> 
-     <div class="mdui-card"> 
-      <!-- 卡片中可以包含一个或多个菜单按钮 --> 
-      <div class="mdui-card-menu"> 
-       <button class="mdui-btn mdui-btn-icon mdui-text-color-white"><i class="mdui-icon material-icons">share</i></button> 
-      </div> 
-     </div> 
-     <!-- 卡片的标题和副标题 --> 
-     <div class="mdui-card-primary"> 
-      <div class="mdui-card-primary-title">
-       发布&amp;更新
-      </div> 
-     </div> 
-     <!-- 卡片的内容 --> 
-     <div class="mdui-card-content">
-      由于前端使用缓存,以下操作需要发布:新建文章、发布文章、修改后台配置、修改workers配置
-      <br /> 前端生效需要ctrl+F5 强制刷新
-     </div> 
-     <!-- 卡片的按钮 --> 
-     <div class="mdui-card-actions"> 
-      <button class="mdui-btn mdui-ripple" onclick="publish()">执行</button> 
-     </div> 
+        <div class="mdui-card"> 
+            <div class="mdui-card-primary"> 
+             <div class="mdui-card-primary-title">
+              关于CF-BLOG-MDUI
+             </div> 
+            </div> 
+            <div class="mdui-card-content">
+                当前版本：<code>V1.0 Build 100</code>
+                <br />更新日期：<code>2021/08/01</code>
+               <br />基于MDUI的CF-BLOG主题   
+            </div> 
+            <div class="mdui-card-actions"> 
+             <a href="https://github.com/awa-qwq/CF-BLOG-MDUI"><button class="mdui-btn mdui-ripple">项目地址</button> </a>
+             <a href="https://www.mdui.org/"><button class="mdui-btn mdui-ripple">MDUI官网</button> </a>
+
+            </div> 
+        </div> 
+        <div class="mdui-card"> 
+            <div class="mdui-card-primary"> 
+                <img src="https://cdn.jsdelivr.net/gh/gdtool/cloudflare-workers-blog@master/themes/JustNews/files/logo2.png"/>
+                <div class="mdui-card-primary-title">
+                关于CF-BLOG
+                </div> 
+            </div> 
+            <div class="mdui-card-content">
+               这是一个运行在cloudflare workers 上的博客程序      
+               <br /> 使用 cloudflare KV作为数据库,无其他依赖
+               <br />兼容静态博客的速度,以及动态博客的灵活性,方便搭建不折腾
+            </div> 
+            <div class="mdui-card-actions"> 
+                <a href="https://github.com/gdtool/cloudflare-workers-blog"><button class="mdui-btn mdui-ripple">项目地址</button> </a>
+                <a href="https://blog.gezhong.vip"><button class="mdui-btn mdui-ripple">演示地址</button> </a>
+            </div> 
+        </div> 
     </div> 
-   </div> 
   </div>  
   <script src="https://cdn.jsdelivr.net/npm/editor.md@1.5.0/editormd.js"></script> 
   <script type="text/javascript">
@@ -408,5 +420,6 @@
     }
 </script> 
   <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>  
+  <script async id="chevereto-pup-src" src="https://imgtu.com/sdk/pup.js" data-url="https://imgtu.com/upload" data-fit-editor="0"></script>
  </body>
 </html>
