@@ -376,7 +376,7 @@
     }
     //发布
     function publish(){
-        if (confirm("确定吗?发布将清理所有静态缓存,重新生成")==false){ 
+        if (confirm("确定吗?发布将清理所有静态缓存,重新生成。由于前端使用缓存,以下操作需要发布:新建文章、发布文章、修改后台配置、修改workers配置前端生效需要ctrl+F5 强制刷新")==false){   
             return false; 
           }
         $.ajax({
